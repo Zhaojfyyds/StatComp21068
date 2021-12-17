@@ -253,22 +253,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">BGDR</span>(x, y, theta, <span class="fl">0.1</span>)</span></code></pre></div>
 <pre><code>##      covariant beta              
-## [1,] &quot;x0&quot;      &quot;5.33911397866932&quot;
-## [2,] &quot;x1&quot;      &quot;4.13495272597437&quot;</code></pre>
+## [1,] &quot;x0&quot;      &quot;5.34088202891252&quot;
+## [2,] &quot;x1&quot;      &quot;4.13103772610878&quot;</code></pre>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">SGDR</span>(x, y, theta, <span class="fl">0.1</span>)</span></code></pre></div>
 <pre><code>##      covariant beta              
-## [1,] &quot;x0&quot;      &quot;5.2258534910689&quot; 
-## [2,] &quot;x1&quot;      &quot;4.23393952617939&quot;</code></pre>
+## [1,] &quot;x0&quot;      &quot;5.25519039343679&quot;
+## [2,] &quot;x1&quot;      &quot;4.17969513873582&quot;</code></pre>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">MBGDR</span>(x, y, theta, <span class="fl">0.1</span>)</span></code></pre></div>
 <pre><code>##      covariant beta              
-## [1,] &quot;x0&quot;      &quot;5.31571854727463&quot;
-## [2,] &quot;x1&quot;      &quot;4.15231909759205&quot;</code></pre>
+## [1,] &quot;x0&quot;      &quot;5.3177414256928&quot; 
+## [2,] &quot;x1&quot;      &quot;4.15028093577051&quot;</code></pre>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>ts <span class="ot">&lt;-</span> <span class="fu">microbenchmark</span>(<span class="at">MBGD=</span><span class="fu">MBGDR</span>(x, y, theta, <span class="fl">0.1</span>),<span class="at">SGD=</span><span class="fu">SGDR</span>(x, y, theta, <span class="fl">0.1</span>),<span class="at">BGD=</span><span class="fu">BGDR</span>(x, y, theta, <span class="fl">0.1</span>))</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ts)[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>)]</span></code></pre></div>
 <pre><code>##   expr       lq   median       uq
-## 1 MBGD 10250.75 10526.40 13646.75
-## 2  SGD  1646.00  2788.70  4118.20
-## 3  BGD 10797.20 13567.85 14279.45</code></pre>
+## 1 MBGD 11.35195 15.01525 19.04210
+## 2  SGD  2.35595  3.15180  5.60320
+## 3  BGD 14.41675 16.59060 20.17415</code></pre>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(y<span class="sc">~</span>x)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fit)</span></code></pre></div>
 <pre><code>## 
@@ -277,18 +277,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 
 ## Residuals:
 ##      Min       1Q   Median       3Q      Max 
-## -0.49898 -0.24951 -0.00601  0.25252  0.50788 
+## -0.49641 -0.25444 -0.00143  0.25103  0.50622 
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept) 5.491470   0.008113   676.9   &lt;2e-16 ***
-## x           4.004857   0.007076   566.0   &lt;2e-16 ***
+## (Intercept) 5.491828   0.008110   677.2   &lt;2e-16 ***
+## x           4.002897   0.007039   568.6   &lt;2e-16 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## Residual standard error: 0.2885 on 4998 degrees of freedom
-## Multiple R-squared:  0.9846, Adjusted R-squared:  0.9846 
-## F-statistic: 3.203e+05 on 1 and 4998 DF,  p-value: &lt; 2.2e-16</code></pre>
+## Residual standard error: 0.2894 on 4998 degrees of freedom
+## Multiple R-squared:  0.9848, Adjusted R-squared:  0.9848 
+## F-statistic: 3.233e+05 on 1 and 4998 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 
 
