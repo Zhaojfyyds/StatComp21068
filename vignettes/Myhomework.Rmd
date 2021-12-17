@@ -1,0 +1,68 @@
+---
+title: "Homework of StatComp21068"
+author: "Junfeng Zhao"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Homework of StatComp21068}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+# hwk 1
+
+## Question
+
+ Go through “R for Beginners” if you are not familiar with R programming.
+ 
+ Use knitr to produce at least 3 examples (texts, figures,tables).
+
+
+
+## Answer
+
+example 1：
+
+$$y_i=\beta_0+\beta_1x_i$$
+
+example 2:
+
+```{r }
+plot(1:10)
+```
+
+example 3:
+
+```{r }
+x<-1:10;
+y<-x^2;
+lmr<-lm(y~x);
+co<-summary(lmr)$coefficients;
+print(co);
+```
+
+```{r}
+knitr::kable(co,digits=2,align = 'c')
+```
+
+example 4:
+
+|x|y|
+|-:|-:|
+|1|2|
+|3|4|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
